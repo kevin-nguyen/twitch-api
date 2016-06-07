@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(107, 62, 130);
+}
+
+.logo {
+    background-color: rgb(107, 62, 130);
+    padding: 15px;
+}
+
+#twitch-tabs {
+    background-color: rgb(107, 62, 130);
+}
+
+#twitch-tabs li a {
+    background-color: white;
+}
+
+#twitch-tabs .active  a{
+    border-color: #240623;
+}
+
+.tab-content {
+    background-color: #240623;
+    color: white;
+}
+
+.online {
+    background-color: green;
+    border-radius: 5px;
+}
+
+.offline {
+    background-color: red; 
+    border-radius: 5px;
+}
+
+.closed {
+    background-color: grey;
+    border-radius: 5px;
+}
