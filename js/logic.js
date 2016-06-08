@@ -29,8 +29,15 @@
                            '<div class="col-md-9"><div class="row"><div class="col-md-8">' + 
                            '<h2><a href="' + channel_link + '" target="_blank">' + channel_name +'</a></h2></div>' + 
                            '<div class="col-md-4 online">Online</div></div>' +
-                           '<div class="row"><div class="col-md-12">' + currently_streaming + ': ' + channel_status + '</div></div></div>' + 
-                           '</div>';
+                           '<div class="row"><div class="col-md-12">' + currently_streaming + ': ' + channel_status + '</div></div>' + 
+                           '<div class="row"><div class="col-md-8 text-center">' + 
+                           '<a class="btn btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" ' +
+                           'href="#' + channel +'VideoBox">' +
+                           '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></div></div></div></div>' + 
+                           '<div class="row collapse" id="' + channel + 'VideoBox"><div class="col-md-12">' +  
+                           '<div class="embed-responsive embed-responsive-16by9">' +
+                           '<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowfullscreen="true" ' + 
+                           'src="http://player.twitch.tv/?channel=' + channel + '"></iframe></div></div></div>';
 
                 return {status: "online", html: channelHTML};
             }
