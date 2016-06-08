@@ -103,7 +103,7 @@
         var $target = $(this);
         var $tabBodies = $('.tab-content').children();
 
-        e.preventDefault()
+        e.preventDefault();
 
         if ($target.text() === "All") {
             var $tabBodyAll = $tabBodies.eq(0);
@@ -120,7 +120,6 @@
 
             channelsHTML.forEach(function(element, index) {
                 if (element.status === "online") {
-                    
                     $tabBodyOnline.append(element.html);
                 }
             });
@@ -137,8 +136,10 @@
             });
         }
 
-        $target.tab('show')
+        $target.tab('show');
     });
 
-    //console.log(channelsHTML);
+    $(window).load(function(e) {
+        $('a[href="#all"]').trigger('click');
+    });
 })(jQuery);
