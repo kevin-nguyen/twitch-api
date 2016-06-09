@@ -38,34 +38,6 @@ h2 a:visited, h2 a:hover, h2 a:active, h2 a:focus {
     text-decoration: none;
 }
 
-.online {
-    background-color: #60843E;
-    border-radius: 5px;
-}
-
-.offline {
-    background-color: #95243D; 
-    border-radius: 5px;
-}
-
-.closed {
-    background-color: grey;
-    border-radius: 5px;
-}
-
-.online, .offline, .closed {
-    margin-top: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    right: 50px;
-}
-
-.profile-style {
-    max-width: 150px;
-    max-height: 150px;
-    margin: 0 0 0 20px;
-}
-
 #onlineBox, #offlineBox, #closedBox {
     padding-bottom: 15px;
 }
@@ -74,12 +46,52 @@ h2 a:visited, h2 a:hover, h2 a:active, h2 a:focus {
     position: relative;
 }
 
+.profile-style {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 0 0 20px;
+}
+
+.online {
+    background-color: #60843E;
+}
+
+.offline {
+    background-color: #95243D; 
+}
+
+.closed {
+    background-color: grey;
+}
+
+.online, .offline, .closed {
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    right: 50px;
+}
+
+#streamStatus {
+    padding-right: 50px;
+}
+
 #videoExpandButton {
     position: absolute;
     bottom: 0;
     font-size: 3rem;
 }
 
-@media (max-width: 991px) {
+div[id*="VideoBox"] {
+    padding-bottom: 15px;
+}
 
+@media (max-width: 991px) {
+    body {
+        padding: auto 0;
+    }
+    .container {
+        margin: auto 0;
+        padding: auto 0;
+    }
 }
