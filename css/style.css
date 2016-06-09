@@ -1,14 +1,23 @@
 body {
     background-color: rgb(107, 62, 130);
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+div {
+    box-sizing: border-box;
 }
 
 .logo {
     background-color: rgb(107, 62, 130);
-    padding: 15px;
+    padding: 15px 0;
 }
 
 #twitch-tabs {
     background-color: rgb(107, 62, 130);
+    margin: auto 0;
+    padding: 0;
 }
 
 #twitch-tabs li a {
@@ -22,19 +31,51 @@ body {
 .tab-content {
     background-color: #240623;
     color: white;
+    padding-top: 15px;
 }
 
 .online {
-    background-color: green;
+    background-color: #60843E;
     border-radius: 5px;
 }
 
 .offline {
-    background-color: red; 
+    background-color: #95243D; 
     border-radius: 5px;
 }
 
 .closed {
     background-color: grey;
     border-radius: 5px;
+}
+
+.online, .offline, .closed {
+    margin-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    right: 50px;
+}
+
+.profile-style {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 0 0 20px;
+}
+
+#onlineBox, #offlineBox, #closedBox {
+    padding-bottom: 15px;
+}
+
+#onlineBox {
+    position: relative;
+}
+
+#videoExpandButton {
+    position: absolute;
+    bottom: 0;
+    font-size: 3rem;
+}
+
+@media (max-width: 991px) {
+
 }

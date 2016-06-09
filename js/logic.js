@@ -24,16 +24,17 @@
                 var channel_link = streamerObject.json.stream.channel.url;
                 var currently_streaming = streamerObject.json.stream.channel.game;
                 var channel_status = streamerObject.json.stream.channel.status;
-                var channelHTML = '<div class="row"><div class="col-md-3">' + 
+                var channelHTML = '<div class="row" id="onlineBox"><div class="col-sm-4 col-md-2">' + 
                            '<img src="' + img_src + '"class="img-responsive img-rounded profile-style" alt="profile image"></div>' +
-                           '<div class="col-md-9"><div class="row"><div class="col-md-8">' + 
+                           '<div class="col-sm-8 col-md-10"><div class="row"><div class="col-sm-12 col-md-8">' + 
                            '<h2><a href="' + channel_link + '" target="_blank">' + channel_name +'</a></h2></div>' + 
-                           '<div class="col-md-4 online">Online</div></div>' +
+                           '<div class="col-sm-6 col-md-2 col-md-offset-2 online">Online</div></div>' +
                            '<div class="row"><div class="col-md-12">' + currently_streaming + ': ' + channel_status + '</div></div>' + 
-                           '<div class="row"><div class="col-md-8 text-center">' + 
-                           '<a class="btn btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" ' +
+                           '</div>' +
+                           '<div class="col-md-12 text-center" id="videoExpandButton">' + 
+                           '<a role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" ' +
                            'href="#' + channel +'VideoBox">' +
-                           '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></div></div></div></div>' + 
+                           '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></div></div>' + 
                            '<div class="row collapse" id="' + channel + 'VideoBox"><div class="col-md-12">' +  
                            '<div class="embed-responsive embed-responsive-16by9">' +
                            '<iframe class="embed-responsive-item" frameborder="0" scrolling="no" allowfullscreen="true" ' + 
@@ -46,11 +47,11 @@
                 var channel_name = streamerObject.json.display_name;
                 var img_src = streamerObject.json.logo !== null ? streamerObject.json.logo : './resource/default_profile_image.png';
                 var channel_link = streamerObject.json.url;
-                var channelHTML = '<div class="row"><div class="col-md-3">' + 
+                var channelHTML = '<div class="row" id="offlineBox"><div class="col-md-2">' + 
                            '<img src="' + img_src + '"class="img-responsive img-rounded profile-style" alt="profile image"></div>' +
-                           '<div class="col-md-9"><div class="row"><div class="col-md-8">' + 
+                           '<div class="col-md-10"><div class="row"><div class="col-md-8">' + 
                            '<h2><a href="' + channel_link + '" target="_blank">' + channel_name +'</a></h2></div>' + 
-                           '<div class="col-md-4 offline">Offline</div></div>' +
+                           '<div class="col-md-2 col-md-offset-2 offline">Offline</div></div>' +
                            '</div></div>';
 
                 return {status: "offline", html: channelHTML};
@@ -59,11 +60,11 @@
             function makeUnavailableChannel() {
                 var channel_name = streamerObject.name;
                 var img_src = './resource/default_profile_image.png';
-                var channelHTML = '<div class="row"><div class="col-md-3">' + 
+                var channelHTML = '<div class="row" id="closedBox"><div class="col-md-2">' + 
                            '<img src="' + img_src + '"class="img-responsive img-rounded profile-style" alt="profile image"></div>' +
-                           '<div class="col-md-9"><div class="row"><div class="col-md-8">' + 
+                           '<div class="col-md-10"><div class="row"><div class="col-md-8">' + 
                            '<h2>' + channel_name + '</h2></div>' + 
-                           '<div class="col-md-4 closed">Account Does Not Exist</div></div>' +
+                           '<div class="col-md-2 col-md-offset-2 closed text-center">Channel Not Found</div></div>' +
                            '</div></div>';
 
                 return {status: "closed", html: channelHTML};
@@ -123,7 +124,6 @@
                     $tabBodyOnline.append(element.html);
                 }
             });
-
         } else if ($target.text() === "Offline") {
             var $tabBodyOffline = $tabBodies.eq(2);
 
